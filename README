@@ -1,0 +1,74 @@
+mohammadsaleh
+
+
+=============================
+=      File description     =
+=============================
+README - this file.
+
+SpaceShip.java - an abstract class describing a basic type ship.
+
+SpaceShipFactory.java - a Factory class for the purpose of instantiating 
+			different types of ships according to the command-line
+		        arguments.
+
+HumanShip.java - a subclass of SpaceShip, which represents a ship controlled by
+		 the user.
+
+RunnerShip.java - a subclass of SpaceShip, Which represents a Runner ship.
+
+BasherShip.java - a subclass of SpaceShip, Which represents a Basher ship.
+
+AggressiveShip.java - a subclass of SpaceShip, Which represents an Aggressive ship.
+
+DrunkardShip.java - a subclass of SpaceShip, Which represents a ship being driven by a
+		    drunk person.
+SpecialShip.java - a subclass of SpaceShip, Which represents a special-edition of an
+		   undisputed ship in terms of attacking and hunting its enemy.
+
+
+=============================
+=          Design           =
+=============================
+I used the is-a relation (inheritance) between the SpaceShip class and 
+the other specific-typed spaceShips (e.g HumanShip,RunnerShip,BasherShip, etc..)
+In addition to that I declared the SpaceShip class to be Abstract, so that nobody
+can instantiate it with a basic type of ship, because a ship must be type-specific.
+
+I also used the has-a relation (composition) in the SpaceShip class, because each
+spaceship is attached to a SpaceShipPhysics object once the ship is created.
+
+Design advantages: the chosen design reflects the relationship between differnet classes
+in a natural way, a HumanShip is a type of SpaceShip, and a SpaceShip has a location and
+direction (physics object).
+
+Design disadvantages: I had to use protected modifier in some of the data members of the 
+SpaceShip class so that they're accessible by the subclasses. and this expands our API
+unintentionally.
+=============================
+=  Implementation details   =
+=============================
+Each specific type of ship overrides the doAction() method from the SpaceShip class,
+because each specific ship has its own unique action to do.
+
+=============================
+=    Drunkard Ship          =
+=============================
+The driver of this ship must've been drinking so much lately because his girlfriend
+dumped him and he is in a pathetic situation even that he's driving while leaning his
+head on the ship's dashboard and cries, but while he does that he also mistakenly stears
+the wheel right and left (the whole time) and sometimes he accelerates, other times not.
+while all that is happening he still feels anger over his breakup and that drives him to
+shoot all over the space. that's truely unresponsible actions!
+
+=============================
+=    Special Ship           =
+=============================
+This is the kind of ship that wins wars. it has full energy the whole time
+(both current and Max energies) and the energy generator is 10 times faster than
+other ships.
+One interesting thing about it, that once it's on the battle ground it sets an eye on the closest
+ship and hunts it the whole war, until it destroys it and once again does the same thing to it.
+it shows no mercy. while hunting the other ship it has it's gun on (with unlimited ammo) and also 
+the shield is always up.
+
